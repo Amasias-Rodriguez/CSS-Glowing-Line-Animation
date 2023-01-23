@@ -31,14 +31,13 @@ body{
 
 @keyframes animate{
     0%,20%{
-        transform: scaleX(1);
-        transform-origin: left;
+        transform: scaleX(0);
     }
     40%{
         transform: scaleX(1);
         transform-origin: left;
     }
-    40.000001%{
+    40.000001%,60%{
         transform: scaleX(1);
         transform-origin: right;
     }
@@ -57,7 +56,7 @@ body{
     height: 10px;
     background: #0bec7c;
     border-radius: 50%;
-    animation: animate 8s linear infinite;
+    animation: animateDot 8s linear infinite;
 }
 
 @keyframes animateDot{
@@ -69,10 +68,28 @@ body{
     }
     15%,20%{
         transform: translateY(-50%) scale(1);
-        box-shadow: 0 0 04px #0bec7c22,
+        box-shadow: 0 0 0 4px #0bec7c22,
         0 0 0 10px #0bec7c22,
-        0 0 0 20px #0bec7c,
-        0 0 0 40px #0bec7c,
-        0 0 0 60px #0bec7c;
+        0 0 20px #0bec7c,
+        0 0 40px 5px #0bec7c,
+        0 0 60px 10px #0bec7c;
+    }
+    40%{
+        transform: translateY(-50%) translateX(395px) scale(1);
+    }
+    80%{
+        transform: translateY(-50%) translateX(395px) scale(1);
+        box-shadow: 0 0 4px #0bec7c22,
+        0 0 0 10px #0bec7c22,
+        0 0 20px #0bec7c,
+        0 0 40px #0bec7c,
+        0 0 60px #0bec7c;
+    }
+    95%{
+        transform: translateY(-50%) translateX(395px) scale(1);
+        box-shadow: none;
+    }
+    100%{
+        transform: translateY(-50%) translateX(395px) scale(0);
     }
 }
